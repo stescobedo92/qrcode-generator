@@ -6,12 +6,14 @@ WORKDIR /usr/src/qrcode-generator
 # Copy the Cargo.lock and Cargo.toml files to the working directory
 COPY Cargo.lock Cargo.toml ./
 
+# Create the source directory
 RUN mkdir src
 
+# Copy the source code to the working directory
 COPY src/ ./src/
 
 # Build the application
-RUN cargo build --release
+RUN cargo build --release --bin bncfqr
 
 # Use a lightweight Alpine Linux image as the final base image
 FROM alpine:latest
@@ -23,4 +25,4 @@ WORKDIR /usr/src/qrcode-generator
 COPY --from=builder /usr/src/qrcode-generator/target/release/bncfqr ./
 
 # Run the executable
-CMD ["./bncfqr"]
+CMD ["bncfqr"]
