@@ -40,6 +40,6 @@ jobs:
           CARGO_GITHUB_TOKEN: ${{ secrets.CARGO_GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}  # Upload URL of the release
-          asset_path: ./target/release/bncfqr  # Path to the application executable
+          asset_path: ./release/bncfqr  # Path to the application executable
           asset_name: bncfqr  # Name of the file in the release
           asset_content_type: application/octet-stream
