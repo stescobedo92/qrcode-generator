@@ -25,3 +25,35 @@ fn main(){
     let args: Vec<String> = env::args().collect();
     parse_arguments(args);
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::fs;
+    #[test]
+    fn test_qr_generation() {
+        let text = "Test text";
+        let output_path = "test_qr.png";
+        generate_qr_code(text, output_path);
+        assert!(fs::metadata(output_path).is_ok());
+        fs::remove_file(output_path).unwrap();
+    }
+    #[test]
+    #[should_panic]
+    fn test_invalid_arguments() {
+        let args = vec!["program_name".to_string()];
+        parse_arguments(args);
+    }
+    #[test]
+    #[should_panic]
+    fn test_invalid_text() {
+        let args = vec!["program_name".to_string(), "".to_string(), "output.png".to_string()];
+        parse_arguments(args);
+    }
+    #[test]
+    #[should_panic]
+    fn test_invalid_output_path() {
+        let args = vec!["program_name".to_string(), "text".to_string()];
+        parse_arguments(args);
+    }
+}
