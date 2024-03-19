@@ -3,6 +3,10 @@ name = "qrcode-generator"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "bncfqr"  # Cambia "nuevo_nombre" al nombre que deseas para tu ejecutable
+path = "src/main.rs"
+
 [dependencies]
 image = { version = "0.25.0", features = [] }
 qrcode = "0.14.0"
