@@ -20,8 +20,8 @@ This will generate a QR code for the text "Hello, world!" and save it as an imag
 # Dependencies
 The project depends on the following libraries:
 
-`qrcode`: To generate the QR codes.
-`image`: To render and save the QR code images.
+- `qrcode`: To generate the QR codes.
+- `image`: To render and save the QR code images.
 
 # Contributions
 Contributions are welcome. If you have ideas to improve this program or encounter any issues, feel free to open an issue or submit a pull request.
