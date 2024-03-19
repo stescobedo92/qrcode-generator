@@ -28,7 +28,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.API_CONNECTION_GIT }}  # Necessary to authenticate with GitHub API.
         with:
           tag_name: v1.0.0  # Define the tag name of the release
-          release_name: bncfqr v1.0.0  # Release Name
+          release_name: bncfqr v1.0.1  # Release Name
           body: |  # Relase body
           draft: false  # Publish the release immediately.
           prerelease: false  # Define whether the release is a pre-release version or not.
