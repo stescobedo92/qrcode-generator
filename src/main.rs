@@ -4,13 +4,16 @@ use std::env;
 
 fn parse_arguments(args: Vec<String>) {
     //Verify that there are at least two arguments (the command and the text to convert).
-    if args.len() < 3 {
-        println!("Usage: {} <text to convert> <output path>", args[0]);
-        return;
+    if args.len() != 3 {
+        panic!("Usage: {} <text to convert> <output path>", args[0]);
     }
 
     let text_to_convert = &args[1];
     let output_path = &args[2];
+
+    if text_to_convert.is_empty() {
+        panic!("Error: Text to convert cannot be empty");
+    }
 
     generate_qr_code(text_to_convert, output_path);
 }
