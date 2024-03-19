@@ -27,8 +27,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.API_CONNECTION_GIT }}  # Necessary to authenticate with GitHub API.
         with:
-          tag_name: v1.0.1  # Define the tag name of the release
-          release_name: bncfqr v1.0.1  # Release Name
+          tag_name: v1.0.2  # Define the tag name of the release
+          release_name: bncfqr v1.0.2  # Release Name
           body: |  # Relase body
           draft: false  # Publish the release immediately.
           prerelease: false  # Define whether the release is a pre-release version or not.
@@ -40,6 +40,6 @@ jobs:
           CARGO_GITHUB_TOKEN: ${{ secrets.CARGO_GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}  # Upload URL of the release
-          asset_path: ./release/bncfqr  # Path to the application executable
+          asset_path: ./release/bncfqr-v1.0.2  # Path to the application executable
           asset_name: bncfqr  # Name of the file in the release
           asset_content_type: application/octet-stream
