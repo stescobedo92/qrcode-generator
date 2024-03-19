@@ -14,8 +14,6 @@ jobs:
 
       - name: Set up Rust
         run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-        with:
-          toolchain: stable
 
       - name: Install toolchain
         run: rustup default stable
